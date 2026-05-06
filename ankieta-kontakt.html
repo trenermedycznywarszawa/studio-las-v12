@@ -44,7 +44,7 @@ img{max-width:100%;display:block} a{color:inherit;text-decoration:none}
 
 /* PAGE HERO */
 #page-hero{background:var(--forest);padding:140px 0 72px;position:relative;overflow:hidden}
-#page-hero::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background-image:url('./images/studio-exterior.jpg');background-size:cover;background-position:center;opacity:.1;mask-image:linear-gradient(to left,rgba(0,0,0,.5),transparent);-webkit-mask-image:linear-gradient(to left,rgba(0,0,0,.5),transparent)}
+#page-hero::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background-image:url('./images/studio-latem.webp');background-size:cover;background-position:center;opacity:.1;mask-image:linear-gradient(to left,rgba(0,0,0,.5),transparent);-webkit-mask-image:linear-gradient(to left,rgba(0,0,0,.5),transparent)}
 .breadcrumb{display:flex;align-items:center;gap:8px;margin-bottom:36px;font-size:.75rem;color:rgba(255,255,255,.4)}
 .breadcrumb a{color:rgba(255,255,255,.4);transition:color var(--t)}
 .breadcrumb a:hover{color:var(--cedar-light)}
@@ -269,7 +269,7 @@ footer{background:var(--forest);padding:60px 0 36px}
         <div class="form-promise"><strong>Po wypełnieniu:</strong> oddzwaniam w ciągu 24 godzin w dni robocze. Krótka rozmowa – bez presji, bez sprzedaży.</div>
       </div>
 
-      <form id="mainForm" name="ankieta-krotka" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate class="reveal" style="transition-delay:.1s">
+      <form id="mainForm" name="ankieta-krotka" method="POST" novalidate class="reveal" style="transition-delay:.1s">
         <input type="hidden" name="form-name" value="ankieta-krotka" />
         <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
         <input type="hidden" name="_subject" value="Nowa krótka ankieta diagnostyczna – Studio Las" />
@@ -487,7 +487,7 @@ footer{background:var(--forest);padding:60px 0 36px}
         <p class="simple-note">Pamiętaj jednak, że im więcej wiem o Twojej sytuacji przed rozmową, tym bardziej konkretna i pomocna będzie ta rozmowa. Dlatego dla osób z poważniejszymi problemami zdrowotnymi zawsze proszę o wypełnienie pełniejszej ankiety powyżej.</p>
       </div>
       <div class="reveal" style="transition-delay:.15s">
-        <form id="simpleForm" name="kontakt-prosty" method="POST" data-netlify="true" netlify-honeypot="bot-field-simple" novalidate>
+        <form id="simpleForm" name="kontakt-prosty" method="POST" novalidate>
           <input type="hidden" name="form-name" value="kontakt-prosty" />
           <input type="text" name="bot-field-simple" style="display:none" tabindex="-1" autocomplete="off" />
           <input type="hidden" name="_subject" value="Nowa wiadomość z formularza prostego – Studio Las" />
@@ -590,12 +590,19 @@ document.getElementById('mainForm').addEventListener('submit',function(e){
 
   if(!ok){const first=this.querySelector('.err,.form-err-msg.show');if(first)first.scrollIntoView({behavior:'smooth',block:'center'});return;}
 
-  submitNetlifyForm(this, 'formStatus', showOk);
+  submitEmailForm(this, 'formStatus', showOk);
 });
 
 
-function encodeFormData(form){
-  return new URLSearchParams(new FormData(form)).toString();
+function buildEmailBody(form){
+  const data=new FormData(form);
+  const grouped={};
+  data.forEach((value,key)=>{
+    if(!value || key==='bot-field' || key==='bot-field-simple' || key==='form-name' || key==='_subject') return;
+    if(!grouped[key]) grouped[key]=[];
+    grouped[key].push(value);
+  });
+  return Object.keys(grouped).map(key=>key+': '+grouped[key].join(', ')).join('\n');
 }
 
 function setStatus(id,msg,isErr=false){
@@ -606,27 +613,20 @@ function setStatus(id,msg,isErr=false){
   el.classList.toggle('err',isErr);
 }
 
-function submitNetlifyForm(form,statusId,onSuccess){
+function submitEmailForm(form,statusId,onSuccess){
   const submitBtn=form.querySelector('button[type="submit"]');
   const oldText=submitBtn ? submitBtn.textContent : '';
-  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Wysyłanie…';}
-  setStatus(statusId,'Wysyłam formularz…');
-
-  fetch('/',{
-    method:'POST',
-    headers:{'Content-Type':'application/x-www-form-urlencoded'},
-    body:encodeFormData(form)
-  })
-  .then(res=>{
-    if(!res.ok) throw new Error('Formularz nie został przyjęty przez serwer.');
-    onSuccess();
-  })
-  .catch(()=>{
-    setStatus(statusId,'Nie udało się wysłać formularza. Napisz bezpośrednio na trenermedycznywarszawa@gmail.com albo zadzwoń: 503 975 998.',true);
-  })
-  .finally(()=>{
+  const subjectField=form.querySelector('[name="_subject"]');
+  const subject=subjectField ? subjectField.value : 'Kontakt Studio Las';
+  const body=buildEmailBody(form);
+  const mailto='mailto:trenermedycznywarszawa@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  if(submitBtn){submitBtn.disabled=true;submitBtn.textContent='Otwieram e-mail...';}
+  setStatus(statusId,'Otwieram program pocztowy z gotowa wiadomoscia. Wyslij ja, zeby dokonczyc kontakt.');
+  window.location.href=mailto;
+  window.setTimeout(()=>{
     if(submitBtn){submitBtn.disabled=false;submitBtn.textContent=oldText;}
-  });
+    onSuccess();
+  }, 400);
 }
 
 function showOk(){
@@ -645,7 +645,7 @@ document.getElementById('simpleForm').addEventListener('submit',function(e){
     setStatus('sfStatus','Uzupełnij imię z kontaktem oraz wiadomość.',true);
     return;
   }
-  submitNetlifyForm(this,'sfStatus',()=>{
+  submitEmailForm(this,'sfStatus',()=>{
     this.style.display='none';
     document.getElementById('sfSuccess').classList.add('show');
   });

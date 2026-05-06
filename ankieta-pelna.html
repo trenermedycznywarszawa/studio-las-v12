@@ -140,20 +140,20 @@ footer a{color:var(--cedar-light)}
 <body>
 
 <nav id="navbar">
-  <a href="/" class="nav-logo">Studio <span>Las</span></a>
+  <a href="./index.html" class="nav-logo">Studio <span>Las</span></a>
   <ul class="nav-links">
-    <li><a href="/">Strona główna</a></li>
-    <li><a href="/metoda-i-pakiety">Metoda i pakiety</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="/ankieta-kontakt" class="nav-cta">Wypełnij ankietę</a></li>
+    <li><a href="./index.html">Strona główna</a></li>
+    <li><a href="./metoda-i-pakiety.html">Metoda i pakiety</a></li>
+    <li><a href="./blog.html">Blog</a></li>
+    <li><a href="./ankieta-kontakt.html" class="nav-cta">Wypełnij ankietę</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="/">Strona główna</a>
-  <a href="/metoda-i-pakiety">Metoda i pakiety</a>
-  <a href="/blog">Blog</a>
-  <a href="/ankieta-kontakt">Wypełnij krótką ankietę</a>
+  <a href="./index.html">Strona główna</a>
+  <a href="./metoda-i-pakiety.html">Metoda i pakiety</a>
+  <a href="./blog.html">Blog</a>
+  <a href="./ankieta-kontakt.html">Wypełnij krótką ankietę</a>
 </div>
 
 <!-- HERO -->
@@ -187,7 +187,7 @@ footer a{color:var(--cedar-light)}
 <div class="form-wrap">
   <div class="container">
 
-    <form id="mainForm" name="ankieta-pelna" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+    <form id="mainForm" name="ankieta-pelna" method="POST" novalidate>
       <input type="hidden" name="form-name" value="ankieta-pelna">
       <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off">
       <input type="hidden" name="_subject" value="Nowa pełna ankieta diagnostyczna – Studio Las">
@@ -1076,26 +1076,36 @@ function nextSection(n){if(validateSection(n)) showSection(n+1);}
 function prevSection(n){showSection(n-1);}
 
 // Form submit
+function buildFullSurveyEmailBody(form){
+  const data=new FormData(form);
+  const grouped={};
+  data.forEach((value,key)=>{
+    if(!value || key==='bot-field' || key==='form-name' || key==='_subject') return;
+    if(!grouped[key]) grouped[key]=[];
+    grouped[key].push(value);
+  });
+  return Object.keys(grouped).map(key=>key+': '+grouped[key].join(', ')).join('\n');
+}
+
 document.getElementById('mainForm').addEventListener('submit',function(e){
   e.preventDefault();
   if(!validateSection(11)) return;
   const btn=document.getElementById('submitBtn');
-  btn.disabled=true; btn.textContent='Wysyłanie…';
-  const fd=new FormData(this);
-  const body=new URLSearchParams(fd).toString();
-  fetch('/',{method:'POST',body,headers:{'Content-Type':'application/x-www-form-urlencoded','Accept':'application/json'}})
-    .then(r=>{
-      if(r.ok||r.status===200){
-        document.getElementById('mainForm').style.display='none';
-        document.getElementById('progressWrap').style.display='none';
-        document.getElementById('formSuccess').style.display='block';
-        document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
-      } else {
-        btn.disabled=false; btn.textContent='Wyślij ankietę →';
-        alert('Błąd wysyłki. Zadzwoń: 503 975 998');
-      }
-    })
-    .catch(()=>{btn.disabled=false;btn.textContent='Wyślij ankietę →';alert('Błąd sieci. Zadzwoń: 503 975 998');});
+  const oldText=btn.textContent;
+  btn.disabled=true;
+  btn.textContent='Otwieram e-mail...';
+  const subjectField=this.querySelector('[name="_subject"]');
+  const subject=subjectField ? subjectField.value : 'Pelna ankieta diagnostyczna - Studio Las';
+  const body=buildFullSurveyEmailBody(this);
+  window.location.href='mailto:trenermedycznywarszawa@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  window.setTimeout(()=>{
+    document.getElementById('mainForm').style.display='none';
+    document.getElementById('progressWrap').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+    document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
+    btn.disabled=false;
+    btn.textContent=oldText;
+  }, 400);
 });
 
 // Hamburger
