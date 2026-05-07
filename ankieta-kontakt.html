@@ -272,33 +272,31 @@ footer{background:var(--forest);padding:60px 0 36px}
 
       <!-- Formspree endpoint dla GitHub Pages. TODO: po wdrożeniu sprawdzić w panelu Formspree, czy formularz jest aktywny i czy powiadomienia e-mail są poprawnie skonfigurowane. -->
       <form id="mainForm" name="ankieta-krotka" action="https://formspree.io/f/xgorealz" method="POST" novalidate class="reveal" style="transition-delay:.1s">
-        <input type="hidden" name="form-name" value="ankieta-krotka" />
-        <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
-        <input type="hidden" name="_subject" value="Nowa krótka ankieta diagnostyczna – Studio Las" />
+        <input type="hidden" name="_subject" value="Nowa ankieta diagnostyczna – Studio Las" />
 
         <div class="form-row">
           <div class="form-group">
             <label class="form-label" for="imie">Imię <span class="req">*</span></label>
-            <input class="form-input" type="text" id="imie" name="imie" placeholder="Twoje imię" required />
+            <input class="form-input" type="text" id="imie" name="Imię" placeholder="Twoje imię" required />
             <span class="form-err-msg" id="err-imie">Podaj imię</span>
           </div>
           <div class="form-group">
             <label class="form-label" for="telefon">Telefon <span class="req">*</span></label>
-            <input class="form-input" type="tel" id="telefon" name="telefon" placeholder="np. 600 123 456" required />
+            <input class="form-input" type="tel" id="telefon" name="Telefon" placeholder="np. 600 123 456" required />
             <span class="form-err-msg" id="err-telefon">Podaj numer telefonu</span>
           </div>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="email">E-mail <span class="req">*</span></label>
-          <input class="form-input" type="email" id="email" name="email" placeholder="twoj@email.pl" required />
+          <input class="form-input" type="email" id="email" name="Email" placeholder="twoj@email.pl" required />
           <span class="form-err-msg" id="err-email">Podaj poprawny adres e-mail</span>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="skad">Skąd będziesz dojeżdżać?</label>
           <span class="form-sublabel">Pomoże mi ocenić czy dojazd jest dla Ciebie realny</span>
-          <select class="form-select" id="skad" name="skad">
+          <select class="form-select" id="skad" name="Skąd dojeżdża">
             <option value="">— Wybierz —</option>
             <option>Piaseczno i okolice</option>
             <option>Tarczyn / Grójec / Mszczonów</option>
@@ -314,11 +312,11 @@ footer{background:var(--forest);padding:60px 0 36px}
           <label class="form-label">Z czym przychodzisz? <span class="req">*</span></label>
           <span class="form-sublabel">Możesz wybrać więcej niż jedną opcję</span>
           <div class="checkbox-group">
-            <label class="checkbox-item"><input type="checkbox" name="problem" value="Przewlekły ból" /><span class="radio-item-label">Przewlekły ból – plecy, kolana, barki lub biodra</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="problem" value="Powrót po kontuzji" /><span class="radio-item-label">Powrót po kontuzji lub operacji</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="problem" value="Lęk przed ruchem" /><span class="radio-item-label">Lęk przed ruchem lub złe doświadczenia z siłownią</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="problem" value="Poprawa sprawności" /><span class="radio-item-label">Chcę poprawić ogólną sprawność i siłę funkcjonalną</span></label>
-            <label class="checkbox-item"><input type="checkbox" name="problem" value="Inne" /><span class="radio-item-label">Coś innego – opiszę niżej</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="Problem" value="Przewlekły ból" /><span class="radio-item-label">Przewlekły ból – plecy, kolana, barki lub biodra</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="Problem" value="Powrót po kontuzji" /><span class="radio-item-label">Powrót po kontuzji lub operacji</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="Problem" value="Lęk przed ruchem" /><span class="radio-item-label">Lęk przed ruchem lub złe doświadczenia z siłownią</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="Problem" value="Poprawa sprawności" /><span class="radio-item-label">Chcę poprawić ogólną sprawność i siłę funkcjonalną</span></label>
+            <label class="checkbox-item"><input type="checkbox" name="Problem" value="Inne" /><span class="radio-item-label">Coś innego – opiszę niżej</span></label>
           </div>
           <span class="form-err-msg" id="err-problem">Zaznacz przynajmniej jedną opcję</span>
         </div>
@@ -340,35 +338,35 @@ footer{background:var(--forest);padding:60px 0 36px}
             <button type="button" class="pain-btn" data-v="10">10</button>
           </div>
           <div class="pain-scale-labels"><span>Brak bólu</span><span>Bardzo silny ból</span></div>
-          <input type="hidden" id="painVal" name="poziom_bolu" value="" />
+          <input type="hidden" id="painVal" name="Poziom bólu" value="" />
         </div>
 
         <div class="form-group">
           <label class="form-label">Czy jesteś gotowy na regularne spotkania 1× w tygodniu przez minimum 12 tygodni?</label>
           <div class="radio-group">
-            <label class="radio-item"><input type="radio" name="gotowosc" value="Tak" /><span class="radio-item-label">Tak, rozumiem że to proces – nie jednorazowa sesja</span></label>
-            <label class="radio-item"><input type="radio" name="gotowosc" value="Wątpliwości" /><span class="radio-item-label">Mam wątpliwości co do czasu – chcę to omówić</span></label>
-            <label class="radio-item"><input type="radio" name="gotowosc" value="Nie wiem" /><span class="radio-item-label">Jeszcze nie wiem – chcę najpierw dowiedzieć się więcej</span></label>
+            <label class="radio-item"><input type="radio" name="Gotowość do pracy" value="Tak" /><span class="radio-item-label">Tak, rozumiem że to proces – nie jednorazowa sesja</span></label>
+            <label class="radio-item"><input type="radio" name="Gotowość do pracy" value="Wątpliwości" /><span class="radio-item-label">Mam wątpliwości co do czasu – chcę to omówić</span></label>
+            <label class="radio-item"><input type="radio" name="Gotowość do pracy" value="Nie wiem" /><span class="radio-item-label">Jeszcze nie wiem – chcę najpierw dowiedzieć się więcej</span></label>
           </div>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="opis">Co najbardziej Cię teraz boli lub przeszkadza? <span class="req">*</span></label>
           <span class="form-sublabel">Napisz swoimi słowami – nie potrzebuję medycznego opisu</span>
-          <textarea class="form-textarea" id="opis" name="opis" required placeholder="np. Boli mnie dolna część pleców przy dłuższym siedzeniu i wstawaniu. Od pół roku. Byłem u fizjoterapeuty, trochę pomogło, ale wraca..."></textarea>
+          <textarea class="form-textarea" id="opis" name="Opis sytuacji" required placeholder="np. Boli mnie dolna część pleców przy dłuższym siedzeniu i wstawaniu. Od pół roku. Byłem u fizjoterapeuty, trochę pomogło, ale wraca..."></textarea>
           <span class="form-err-msg" id="err-opis">Opisz swój problem – to kluczowe do dobrej rozmowy</span>
         </div>
 
         <div class="form-section"><div class="form-section-title">Zgody</div></div>
 
         <div class="rodo-wrap">
-          <input type="checkbox" id="rodo1" name="rodo1" required />
+          <input type="checkbox" id="rodo1" name="Zgoda RODO" value="Tak" required />
           <span class="rodo-text"><strong>Wyrażam zgodę</strong> na przetwarzanie moich danych osobowych przez Damiana Krawca (Studio Las) w celu odpowiedzi na zapytanie i nawiązania kontaktu w sprawie współpracy treningowej. Dane nie będą przekazywane osobom trzecim. Zgodę mogę wycofać pisząc na <a href="mailto:trenermedycznywarszawa@gmail.com">trenermedycznywarszawa@gmail.com</a>. <span class="req">*</span></span>
         </div>
         <span class="form-err-msg" id="err-rodo" style="margin-bottom:16px;">Zgoda jest wymagana</span>
 
         <div class="rodo-wrap" style="border-color:var(--grey-soft);">
-          <input type="checkbox" id="rodo2" name="rodo2" />
+          <input type="checkbox" id="rodo2" name="Zgoda na kontakt" value="Tak" />
           <span class="rodo-text">Opcjonalnie: wyrażam zgodę na otrzymywanie informacji o ofercie Studio Las. Mogę się wypisać w każdej chwili.</span>
         </div>
 
@@ -490,16 +488,14 @@ footer{background:var(--forest);padding:60px 0 36px}
       </div>
       <div class="reveal" style="transition-delay:.15s">
         <form id="simpleForm" name="kontakt-prosty" action="https://formspree.io/f/xgorealz" method="POST" novalidate>
-          <input type="hidden" name="form-name" value="kontakt-prosty" />
-          <input type="text" name="bot-field-simple" style="display:none" tabindex="-1" autocomplete="off" />
           <input type="hidden" name="_subject" value="Nowa wiadomość z formularza prostego – Studio Las" />
           <div class="sf-group">
             <label class="sf-label" for="sf-imie">Imię i telefon lub e-mail *</label>
-            <input class="sf-input" type="text" id="sf-imie" name="kontakt" placeholder="Jan, tel. 600 123 456" required />
+            <input class="sf-input" type="text" id="sf-imie" name="Kontakt" placeholder="Jan, tel. 600 123 456" required />
           </div>
           <div class="sf-group">
             <label class="sf-label" for="sf-msg">Twoja wiadomość *</label>
-            <textarea class="sf-textarea" id="sf-msg" name="wiadomosc" placeholder="Napisz, o co chodzi – bez formalności..." required></textarea>
+            <textarea class="sf-textarea" id="sf-msg" name="Wiadomość" placeholder="Napisz, o co chodzi – bez formalności..." required></textarea>
           </div>
           <button type="submit" class="sf-submit">Wyślij wiadomość →</button>
           <div class="sf-status" id="sfStatus" role="status" aria-live="polite"></div>
@@ -577,14 +573,19 @@ document.getElementById('mainForm').addEventListener('submit',function(e){
   const hide=(id)=>document.getElementById(id).classList.remove('show');
   const field=(id,errId,cond)=>{const el=document.getElementById(id);if(cond){el.classList.add('err');show(errId);ok=false}else{el.classList.remove('err');hide(errId)}};
 
-  field('imie','err-imie',!this.imie.value.trim());
-  field('telefon','err-telefon',this.telefon.value.replace(/\s/g,'').length<9);
-  field('email','err-email',!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email.value));
+  const imie=document.getElementById('imie');
+  const telefon=document.getElementById('telefon');
+  const email=document.getElementById('email');
+  const opis=document.getElementById('opis');
 
-  const checked=this.querySelectorAll('input[name="problem"]:checked');
+  field('imie','err-imie',!imie.value.trim());
+  field('telefon','err-telefon',telefon.value.replace(/\s/g,'').length<9);
+  field('email','err-email',!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value));
+
+  const checked=this.querySelectorAll('input[name="Problem"]:checked');
   if(checked.length===0){show('err-problem');ok=false}else hide('err-problem');
 
-  field('opis','err-opis',!this.opis.value.trim()||this.opis.value.trim().length<20);
+  field('opis','err-opis',!opis.value.trim()||opis.value.trim().length<20);
 
   if(!document.getElementById('rodo1').checked){show('err-rodo');ok=false}else hide('err-rodo');
 
