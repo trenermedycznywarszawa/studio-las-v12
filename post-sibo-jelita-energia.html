@@ -95,7 +95,7 @@
       font-weight:500;
     }
     .logo span { color:var(--cedar-light); }
-    .nav-links { display:flex; gap:28px; align-items:center; list-style:none; }
+    .nav-links { display:flex; gap:clamp(18px,2vw,28px); align-items:center; list-style:none; }
     .nav-links a {
       font-size:.76rem;
       letter-spacing:.13em;
@@ -104,6 +104,19 @@
       transition:color var(--t);
     }
     .nav-links a:hover { color:var(--cedar-light); }
+
+.client-panel-link{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.78);transition:color var(--t),text-shadow var(--t),transform var(--t),border-color var(--t)}
+.client-panel-link:hover,.client-panel-link:focus-visible{color:var(--cedar-light);text-shadow:0 0 18px rgba(141,173,120,.28);transform:translateY(-1px)}
+.client-panel-icon{width:15px;height:15px;flex:0 0 auto;stroke:currentColor;stroke-width:1.55;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.92;transition:opacity var(--t),transform var(--t)}
+.client-panel-link:hover .client-panel-icon,.client-panel-link:focus-visible .client-panel-icon{opacity:1;transform:translateY(-1px)}
+.nav-mobile .client-panel-link{min-height:44px;justify-content:flex-start;color:rgba(255,255,255,.86)}
+
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:8px;cursor:pointer}
+    .nav-hamburger span{width:24px;height:2px;background:var(--white);display:block}
+    .nav-mobile{display:none;position:fixed;top:72px;left:0;right:0;z-index:99;background:rgba(23,37,30,.97);border-bottom:1px solid rgba(255,255,255,.08);padding:22px 24px 28px;gap:16px}
+    .nav-mobile.open{display:grid}
+    .nav-mobile a{color:rgba(255,255,255,.84);padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.96rem}
+    .nav-mobile .btn{width:100%;min-height:44px;margin-top:4px;color:var(--white)}
 
     .btn {
       display:inline-flex;
@@ -359,11 +372,13 @@
 
     @media (max-width:980px) {
       .nav-links { display:none; }
+      .nav-hamburger { display:flex; }
       .final-cta-inner { grid-template-columns:1fr; }
       .related-grid { grid-template-columns:1fr 1fr; }
     }
     @media (max-width:640px) {
       .nav { height:64px; padding:0 18px; }
+      .nav-mobile { top:64px; max-height:calc(100vh - 64px); overflow-y:auto; }
       .logo { font-size:1.25rem; }
       .article-hero { min-height:680px; padding:118px 0 64px; }
       .article-hero h1 { font-size:3.1rem; }
@@ -386,8 +401,22 @@
       <li><a href="./blog.html">Blog</a></li>
       <li><a href="./index.html#o-damianie">O mnie</a></li>
       <li><a href="./ankieta-kontakt.html#ankieta" class="btn btn-primary" style="min-height:42px;padding:10px 18px;">Ankieta</a></li>
+      <li><!-- future client portal --><a href="#" class="client-panel-link"><svg class="client-panel-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18.5 5.5h2v2"/><path d="M20.5 5.5 17 9"/></svg><span>Panel klienta</span></a></li>
     </ul>
+
+    <button class="nav-hamburger" id="hamburger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navMobile" type="button">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="./index.html#jak-to-dziala">Proces</a>
+    <a href="./index.html#pakiety">Pakiety</a>
+    <a href="./blog.html">Blog</a>
+    <a href="./index.html#o-damianie">O mnie</a>
+    <a href="./ankieta-kontakt.html#ankieta" class="btn btn-primary">Ankieta</a>
+    <!-- future client portal --><a href="#" class="client-panel-link"><svg class="client-panel-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18.5 5.5h2v2"/><path d="M20.5 5.5 17 9"/></svg><span>Panel klienta</span></a>
+  </div>
 
   <header class="article-hero">
     <div class="article-hero-bg">
@@ -536,5 +565,24 @@
       <div><a href="./index.html">Strona główna</a> · <a href="./blog.html">Blog</a> · <a href="./ankieta-kontakt.html#ankieta">Ankieta</a></div>
     </div>
   </footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('navMobile');
+    if (hamburger && navMobile) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = navMobile.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        hamburger.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
+      });
+      navMobile.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMobile.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.setAttribute('aria-label', 'Otwórz menu');
+        });
+      });
+    }
+  </script>
+
 </body>
 </html>

@@ -80,7 +80,8 @@
     select:focus, input:focus, textarea:focus { border-color: rgba(127,176,105,.7); box-shadow: 0 0 0 3px rgba(127,176,105,.12); }
 
     .nav { display: grid; gap: 7px; }
-    .nav button {
+    .nav button,
+    .nav .client-panel-link {
       width: 100%;
       min-height: 44px;
       border: 1px solid transparent;
@@ -96,6 +97,9 @@
     }
     .nav button.active { color: var(--ink); background: rgba(127,176,105,.13); border-color: rgba(127,176,105,.26); }
     .nav svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    .nav .client-panel-link { text-decoration: none; }
+    .nav .client-panel-link:hover,
+    .nav .client-panel-link:focus-visible { color: var(--ink); background: rgba(255,255,255,.04); border-color: rgba(127,176,105,.18); }
 
     .side-card {
       margin-top: auto;
@@ -291,8 +295,9 @@
     @media (max-width: 980px) {
       .app { grid-template-columns: 1fr; }
       .side { position: static; height: auto; }
-      .nav { grid-template-columns: repeat(5, 1fr); }
-      .nav button { justify-content: center; padding: 10px 8px; }
+      .nav { grid-template-columns: repeat(6, 1fr); }
+      .nav button,
+      .nav .client-panel-link { justify-content: center; padding: 10px 8px; }
       .nav span { display: none; }
       .cols-4, .cols-3, .cols-2 { grid-template-columns: 1fr; }
       .span-2 { grid-column: auto; }
@@ -333,6 +338,7 @@
         <button data-view="process"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Proces</span></button>
         <button data-view="sessions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5V4a2 2 0 0 1 2-2h11l3 3v14.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/></svg><span>Sesje</span></button>
         <button data-view="report"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg><span>Raport</span></button>
+        <!-- future client portal --><a href="#" class="client-panel-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18.5 5.5h2v2"/><path d="M20.5 5.5 17 9"/></svg><span>Panel klienta</span></a>
       </nav>
 
       <div class="side-card">

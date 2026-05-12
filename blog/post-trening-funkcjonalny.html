@@ -29,9 +29,15 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
 #navbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;background:var(--forest);box-shadow:0 2px 24px rgba(0,0,0,.15)}
 .nav-logo{font-family:var(--font-display);font-size:1.35rem;font-weight:500;letter-spacing:.08em;color:var(--white)}
 .nav-logo span{color:var(--cedar)}
-.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links{display:flex;align-items:center;gap:clamp(18px,2vw,32px);list-style:none}
 .nav-links a{font-size:.8rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.8);transition:color var(--t)}
 .nav-links a:hover{color:var(--cedar-light)}
+
+.client-panel-link{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.78);transition:color var(--t),text-shadow var(--t),transform var(--t),border-color var(--t)}
+.client-panel-link:hover,.client-panel-link:focus-visible{color:var(--cedar-light);text-shadow:0 0 18px rgba(141,173,120,.28);transform:translateY(-1px)}
+.client-panel-icon{width:15px;height:15px;flex:0 0 auto;stroke:currentColor;stroke-width:1.55;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.92;transition:opacity var(--t),transform var(--t)}
+.client-panel-link:hover .client-panel-icon,.client-panel-link:focus-visible .client-panel-icon{opacity:1;transform:translateY(-1px)}
+.nav-mobile .client-panel-link{min-height:44px;justify-content:flex-start;color:rgba(255,255,255,.86)}
 .nav-cta{color:var(--white)!important;border:1px solid var(--cedar);padding:9px 20px;font-size:.75rem!important;transition:background var(--t)!important}
 .nav-cta:hover{background:var(--cedar)!important}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
@@ -173,7 +179,8 @@ footer{background:var(--forest);padding:60px 0 36px}
     <li><a href="../dla-kogo.html">Dla kogo</a></li>
     <li><a href="../blog.html" class="active">Blog</a></li>
     <li><a href="../ankieta-kontakt.html#ankieta" class="nav-cta">Ankieta</a></li>
-  </ul>
+      <li><!-- future client portal --><a href="#" class="client-panel-link"><svg class="client-panel-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18.5 5.5h2v2"/><path d="M20.5 5.5 17 9"/></svg><span>Panel klienta</span></a></li>
+    </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navMobile">
     <span></span><span></span><span></span>
   </button>
@@ -184,7 +191,8 @@ footer{background:var(--forest);padding:60px 0 36px}
   <a href="../dla-kogo.html">Dla kogo</a>
   <a href="../blog.html">Blog</a>
   <a href="../ankieta-kontakt.html#ankieta" class="btn-primary">Wypełnij ankietę</a>
-</div>
+    <!-- future client portal --><a href="#" class="client-panel-link"><svg class="client-panel-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18.5 5.5h2v2"/><path d="M20.5 5.5 17 9"/></svg><span>Panel klienta</span></a>
+  </div>
 
 
 <!-- READING PROGRESS -->

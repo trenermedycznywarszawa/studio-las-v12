@@ -97,10 +97,7 @@
 
     .nav-logo span { color:var(--cedar); }
 
-    .nav-links {
-      display:flex;
-      align-items:center;
-      gap:32px;
+    .nav-links{display:flex;align-items:center;gap:clamp(18px,2vw,32px);
       list-style:none;
     }
 
@@ -114,6 +111,12 @@
     }
 
     .nav-links a:hover,
+
+.client-panel-link{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.78);transition:color var(--transition),text-shadow var(--transition),transform var(--transition),border-color var(--transition)}
+.client-panel-link:hover,.client-panel-link:focus-visible{color:var(--cedar-light);text-shadow:0 0 18px rgba(141,173,120,.28);transform:translateY(-1px)}
+.client-panel-icon{width:15px;height:15px;flex:0 0 auto;stroke:currentColor;stroke-width:1.55;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.92;transition:opacity var(--transition),transform var(--transition)}
+.client-panel-link:hover .client-panel-icon,.client-panel-link:focus-visible .client-panel-icon{opacity:1;transform:translateY(-1px)}
+.nav-mobile .client-panel-link{min-height:44px;justify-content:flex-start;color:rgba(255,255,255,.86)}
     .nav-links a.active { color:var(--cedar-light); }
 
     .nav-cta {
@@ -1419,9 +1422,9 @@
     <ul class="nav-links">
       <li><a href="./index.html">Strona główna</a></li>
       <li><a href="./metoda-i-pakiety.html" class="active">Metoda i pakiety</a></li>
-      <li><a href="./strefa-klienta.html">Strefa klienta</a></li>
       <li><a href="./blog.html">Blog</a></li>
       <li><a href="./ankieta-kontakt.html#ankieta" class="nav-cta">Ankieta / Kontakt</a></li>
+      <li><!-- future client portal --><a href="#" class="client-panel-link"><svg class="client-panel-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18.5 5.5h2v2"/><path d="M20.5 5.5 17 9"/></svg><span>Panel klienta</span></a></li>
     </ul>
 
     <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navMobile" id="hamburger" type="button">
@@ -1432,9 +1435,9 @@
   <div class="nav-mobile" id="navMobile">
     <a href="./index.html">Strona główna</a>
     <a href="./metoda-i-pakiety.html">Metoda i pakiety</a>
-    <a href="./strefa-klienta.html">Strefa klienta</a>
     <a href="./blog.html">Blog</a>
     <a href="./ankieta-kontakt.html#ankieta" class="btn-primary">Wypełnij ankietę</a>
+    <!-- future client portal --><a href="#" class="client-panel-link"><svg class="client-panel-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18.5 5.5h2v2"/><path d="M20.5 5.5 17 9"/></svg><span>Panel klienta</span></a>
   </div>
 
   <main>
@@ -1982,7 +1985,7 @@
         <p class="footer-copy">© 2026 Studio Las · Damian Krawiec. Wszelkie prawa zastrzeżone.</p>
         <div class="footer-legal">
           <a href="./ankieta-kontakt.html#kontakt-lokalizacja">Kontakt</a>
-          <a href="./strefa-klienta.html">Strefa klienta</a>
+          <!-- future client portal --><a href="#" class="client-panel-link"><svg class="client-panel-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18.5 5.5h2v2"/><path d="M20.5 5.5 17 9"/></svg><span>Panel klienta</span></a>
           <a href="./ankieta-kontakt.html#ankieta">Ankieta</a>
         </div>
       </div>
