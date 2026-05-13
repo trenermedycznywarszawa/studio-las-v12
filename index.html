@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Studio Las | Trening medyczny 1:1 pod Warszawą</title>
-  <meta name="description" content="Kameralne studio treningu medycznego 1:1 w Pracach Dużych pod Warszawą. Dla osób 40+, które chcą wyjść z bólu, wrócić po kontuzji i odzyskać zaufanie do ciała." />
+  <meta name="description" content="Kameralne studio treningu medycznego 1:1 pod Warszawą. Praca po bólu i kontuzjach, diagnostyka ruchowa, spokojny proces oraz konsultacje specjalistyczne, gdy są potrzebne." />
 
   <meta property="og:title" content="Studio Las | Trening medyczny 1:1 w lesie pod Warszawą" />
   <meta property="og:description" content="Około 12 tygodni spokojnej pracy 1:1. Bez chaosu siłowni. Bez presji. Z diagnostyką, planem i raportem efektów." />
@@ -352,6 +352,58 @@
       background:var(--cedar);
     }
 
+    .specialist-scope {
+      background:linear-gradient(180deg, var(--offwhite) 0%, #f1ece4 100%);
+    }
+
+    .specialist-wrap {
+      display:grid;
+      grid-template-columns:minmax(0, 1.08fr) minmax(320px, .92fr);
+      gap:56px;
+      align-items:center;
+    }
+
+    .specialist-copy .section-lead + .section-lead {
+      margin-top:18px;
+    }
+
+    .specialist-panel {
+      background:rgba(255,255,255,.72);
+      border:1px solid var(--grey-soft);
+      padding:30px;
+    }
+
+    .specialist-grid {
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:10px;
+      margin-bottom:18px;
+    }
+
+    .specialist-card {
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      padding:18px;
+      background:var(--white);
+      border:1px solid rgba(184,147,90,.28);
+    }
+
+    .specialist-card span {
+      color:var(--forest);
+      font-size:.84rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      font-weight:600;
+    }
+
+    .specialist-note {
+      border-top:1px solid var(--grey-soft);
+      padding-top:18px;
+      color:var(--grey-text);
+      font-size:.9rem;
+      line-height:1.7;
+    }
     .process { background:var(--white); }
 
     .process-header {
@@ -1103,6 +1155,25 @@
       </div>
     </section>
 
+    <section class="section specialist-scope" aria-label="Współpraca specjalistyczna">
+      <div class="container specialist-wrap">
+        <div class="specialist-copy reveal">
+          <div class="eyebrow">Szersze spojrzenie</div>
+          <h2 class="section-title">Gdy problem wymaga szerszego spojrzenia</h2>
+          <p class="section-lead">Nie każdy problem da się uczciwie sprowadzić do ćwiczeń. Dlatego w pracy z klientami patrzę szerzej: na ruch, ból, regenerację, odżywianie i historię zdrowia. Jeśli widzę, że sytuacja wymaga dodatkowej konsultacji, omawiam kierunek pracy ze sprawdzonym specjalistą — psychodietetykiem, dietetykiem klinicznym, fizjoterapeutą lub ortopedą.</p>
+          <p class="section-lead">Dzięki temu nie działamy w ciemno. Trening pozostaje głównym narzędziem pracy w Studio Las, ale decyzje podejmujemy odpowiedzialnie — z uwzględnieniem tego, czego naprawdę potrzebuje Twoje ciało.</p>
+        </div>
+        <div class="specialist-panel reveal">
+          <div class="specialist-grid" aria-label="Specjaliści konsultowani w razie potrzeby">
+            <div class="specialist-card"><span>Psychodietetyk</span></div>
+            <div class="specialist-card"><span>Dietetyk kliniczny</span></div>
+            <div class="specialist-card"><span>Fizjoterapeuta</span></div>
+            <div class="specialist-card"><span>Ortopeda</span></div>
+          </div>
+          <p class="specialist-note">Konsultacja specjalistyczna pojawia się wtedy, gdy jest potrzebna — nie jako ozdobnik, tylko jako element bezpieczeństwa procesu.</p>
+        </div>
+      </div>
+    </section>
     <section class="section process" id="jak-to-dziala">
       <div class="container">
         <div class="process-header reveal">
