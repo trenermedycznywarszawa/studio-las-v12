@@ -875,15 +875,6 @@
 
     @media (max-width:640px) {
       html { scroll-padding-top:72px; }
-      .nav { height:64px; padding:0 18px; }
-      .nav-mobile { top:64px; }
-      .nav-mobile.open {
-        max-height:calc(100vh - 64px);
-        overflow-y:auto;
-      }
-
-      .logo { font-size:1.25rem; }
-
       .hero {
         min-height:auto;
         padding:102px 0 62px;
@@ -1484,33 +1475,6 @@
   </footer>
 
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navMobile = document.getElementById('navMobile');
-
-    if (hamburger && navMobile) {
-      hamburger.addEventListener('click', () => {
-        const isOpen = navMobile.classList.toggle('open');
-        hamburger.setAttribute('aria-expanded', String(isOpen));
-        hamburger.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
-      });
-
-      document.querySelectorAll('#navMobile a').forEach(link => {
-        link.addEventListener('click', () => {
-          navMobile.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-          hamburger.setAttribute('aria-label', 'Otwórz menu');
-        });
-      });
-
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape') {
-          navMobile.classList.remove('open');
-          hamburger.setAttribute('aria-expanded', 'false');
-          hamburger.setAttribute('aria-label', 'Otwórz menu');
-        }
-      });
-    }
-
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
