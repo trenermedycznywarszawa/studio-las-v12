@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Studio Las OS | Prywatny System Sprawności na Lata</title>
+  <meta name="description" content="Roczny, kameralny program Studio Las OS dla osób 40–60+, które chcą odzyskać kontrolę nad ciałem, zmniejszyć ryzyko bólu i zbudować sprawność na kolejne lata." />
+
+  <meta property="og:title" content="Studio Las OS | Prywatny System Sprawności na Lata" />
+  <meta property="og:description" content="Nie siłownia, nie wellness i nie przypadkowy trening. Studio Las OS to prywatny system zarządzania ciałem, sprawnością i regeneracją dla osób 40–60+." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:url" content="https://trenermedycznywarszawa.github.io/studio-las-v12/studio-las-os.html" />
+  <meta property="og:image" content="https://trenermedycznywarszawa.github.io/studio-las-v12/images/studio-interior.webp" />
+  <link rel="canonical" href="https://trenermedycznywarszawa.github.io/studio-las-v12/studio-las-os.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --forest:#17251e;
+      --forest-deep:#101a15;
+      --forest-2:#22342b;
+      --cedar:#b8935a;
+      --cedar-light:#d6b27a;
+      --offwhite:#f7f4ef;
+      --paper:#fffdf9;
+      --white:#ffffff;
+      --ink:#2d2d2d;
+      --muted:#6b6560;
+      --soft:#e8e4dc;
+      --line:rgba(184,147,90,.28);
+      --display:'Cormorant Garamond', Georgia, serif;
+      --body:'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max:1160px;
+      --t:260ms ease;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; scroll-padding-top:84px; }
+    body {
+      min-width:0;
+      overflow-x:hidden;
+      background:var(--offwhite);
+      color:var(--ink);
+      font-family:var(--body);
+      font-weight:300;
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    img { display:block; max-width:100%; }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+    ul, ol { list-style:none; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline:2px solid var(--cedar-light);
+      outline-offset:4px;
+    }
+
+    .container {
+      width:100%;
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    .section {
+      padding:96px 0;
+      scroll-margin-top:84px;
+    }
+
+    .section.dark {
+      background:var(--forest);
+      color:var(--white);
+    }
+
+    .section.white { background:var(--paper); }
+    .section.off { background:var(--offwhite); }
+
+    .eyebrow {
+      margin-bottom:18px;
+      color:var(--cedar);
+      font-size:.74rem;
+      font-weight:600;
+      letter-spacing:.16em;
+      line-height:1.3;
+      text-transform:uppercase;
+    }
+
+    .dark .eyebrow,
+    .os-hero .eyebrow,
+    .final-cta .eyebrow { color:var(--cedar-light); }
+
+    h1,
+    h2,
+    h3 {
+      font-family:var(--display);
+      font-weight:300;
+      line-height:1.06;
+      text-wrap:balance;
+    }
+
+    h1 {
+      max-width:920px;
+      margin-bottom:26px;
+      color:var(--white);
+      font-size:5.35rem;
+    }
+
+    h2 {
+      max-width:920px;
+      margin-bottom:24px;
+      color:var(--forest);
+      font-size:3.55rem;
+    }
+
+    h3 {
+      margin-bottom:13px;
+      color:var(--forest);
+      font-size:1.62rem;
+    }
+
+    p {
+      max-width:760px;
+      color:var(--muted);
+      font-size:1rem;
+    }
+
+    .dark h2,
+    .dark h3,
+    .final-cta h2 { color:var(--white); }
+
+    .dark p,
+    .final-cta p { color:rgba(255,255,255,.74); }
+
+    .lead {
+      font-size:1.18rem;
+      line-height:1.78;
+    }
+
+    .section-head {
+      max-width:880px;
+      margin-bottom:46px;
+    }
+
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:15px 28px;
+      border:1px solid transparent;
+      border-radius:2px;
+      cursor:pointer;
+      font-size:.78rem;
+      font-weight:600;
+      letter-spacing:.12em;
+      line-height:1.1;
+      text-align:center;
+      text-transform:uppercase;
+      transition:background var(--t), border-color var(--t), color var(--t), transform var(--t);
+    }
+
+    .btn:hover { transform:translateY(-1px); }
+
+    .btn-primary {
+      background:var(--cedar);
+      border-color:var(--cedar);
+      color:var(--white);
+    }
+
+    .btn-primary:hover {
+      background:var(--cedar-light);
+      border-color:var(--cedar-light);
+      color:var(--forest-deep);
+    }
+
+    .btn-ghost {
+      background:rgba(255,255,255,.04);
+      border-color:rgba(255,255,255,.26);
+      color:var(--white);
+    }
+
+    .btn-ghost:hover {
+      background:rgba(214,178,122,.1);
+      border-color:var(--cedar-light);
+      color:var(--cedar-light);
+    }
+
+    .site-nav {
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:100;
+      height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 24px;
+      background:rgba(23,37,30,.94);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      box-shadow:0 2px 24px rgba(0,0,0,.15);
+      backdrop-filter:blur(16px);
+    }
+
+    .site-logo {
+      color:var(--white);
+      font-family:var(--display);
+      font-size:1.35rem;
+      font-weight:500;
+      letter-spacing:.08em;
+      white-space:nowrap;
+    }
+
+    .site-logo span { color:var(--cedar-light); }
+
+    .site-nav-links {
+      display:flex;
+      align-items:center;
+      gap:clamp(14px, 2vw, 28px);
+      list-style:none;
+    }
+
+    .site-nav-links a,
+    .site-nav-mobile a {
+      color:rgba(255,255,255,.8);
+      font-size:.8rem;
+      font-weight:400;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      transition:color var(--t), background var(--t), border-color var(--t), transform var(--t);
+    }
+
+    .site-nav-links a:hover,
+    .site-nav-links a.active,
+    .site-nav-mobile a:hover,
+    .site-nav-mobile a.active { color:var(--cedar-light); }
+
+    .site-nav-cta {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 20px;
+      border:1px solid var(--cedar);
+      color:rgba(255,255,255,.86)!important;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    .site-nav-cta:hover,
+    .site-nav-cta.active {
+      background:rgba(184,147,90,.12);
+      border-color:var(--cedar-light);
+      color:var(--cedar-light)!important;
+    }
+
+    .site-client-link {
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      color:rgba(255,255,255,.68)!important;
+      white-space:nowrap;
+    }
+
+    .site-client-link:hover,
+    .site-client-link:focus-visible {
+      color:var(--cedar-light)!important;
+      transform:translateY(-1px);
+    }
+
+    .site-client-icon {
+      width:15px;
+      height:15px;
+      flex:0 0 auto;
+      stroke:currentColor;
+      stroke-width:1.55;
+      fill:none;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+      opacity:.9;
+    }
+
+    .site-nav-toggle {
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      padding:8px;
+      border:0;
+      background:transparent;
+      cursor:pointer;
+    }
+
+    .site-nav-toggle span {
+      display:block;
+      width:24px;
+      height:2px;
+      background:var(--white);
+    }
+
+    .site-nav-mobile {
+      display:none;
+      position:fixed;
+      top:68px;
+      left:0;
+      right:0;
+      z-index:99;
+      flex-direction:column;
+      gap:16px;
+      max-height:calc(100vh - 68px);
+      overflow-y:auto;
+      padding:24px;
+      background:var(--forest);
+      box-shadow:0 18px 40px rgba(0,0,0,.18);
+    }
+
+    .site-nav-mobile.open { display:flex; }
+    .site-nav-mobile a { padding:10px 0; border-bottom:1px solid rgba(255,255,255,.1); }
+    .site-nav-mobile .site-nav-cta { margin-top:4px; padding:14px 18px; border-bottom:1px solid var(--cedar); }
+    .site-nav-mobile .site-client-link { min-height:44px; justify-content:flex-start; color:rgba(255,255,255,.72)!important; }
+
+    .os-hero {
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      min-height:88svh;
+      padding:148px 0 76px;
+      overflow:hidden;
+      background:var(--forest-deep);
+      color:var(--white);
+    }
+
+    .hero-media,
+    .hero-media::after,
+    .hero-media img {
+      position:absolute;
+      inset:0;
+    }
+
+    .hero-media img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      opacity:.38;
+      filter:saturate(.72) contrast(1.04);
+    }
+
+    .hero-media::after {
+      content:"";
+      background:
+        linear-gradient(90deg, rgba(16,26,21,.97) 0%, rgba(16,26,21,.86) 50%, rgba(16,26,21,.52) 100%),
+        linear-gradient(0deg, rgba(16,26,21,.88) 0%, rgba(16,26,21,.16) 48%, rgba(16,26,21,.42) 100%);
+    }
+
+    .hero-inner {
+      position:relative;
+      z-index:1;
+      max-width:980px;
+    }
+
+    .hero-lead {
+      max-width:760px;
+      margin-bottom:30px;
+      color:rgba(255,255,255,.8);
+      font-size:1.2rem;
+      line-height:1.78;
+    }
+
+    .hero-actions,
+    .section-actions {
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:30px;
+    }
+
+    .proof-chips {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:28px;
+    }
+
+    .proof-chips li {
+      padding:10px 14px;
+      border:1px solid rgba(214,178,122,.34);
+      border-radius:2px;
+      background:rgba(255,255,255,.05);
+      color:rgba(255,255,255,.8);
+      font-size:.86rem;
+      line-height:1.4;
+    }
+
+    .hero-note {
+      max-width:840px;
+      margin-top:30px;
+      padding-top:24px;
+      border-top:1px solid rgba(214,178,122,.36);
+      color:rgba(255,255,255,.72);
+      font-size:.98rem;
+      line-height:1.82;
+    }
+
+    .problem-grid {
+      display:grid;
+      grid-template-columns:minmax(0, 1.08fr) minmax(280px, .72fr);
+      gap:52px;
+      align-items:start;
+    }
+
+    .copy-stack p + p { margin-top:20px; }
+
+    .signal-list,
+    .check-list {
+      display:grid;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .signal-list li,
+    .check-list li {
+      position:relative;
+      padding-left:22px;
+      line-height:1.62;
+    }
+
+    .signal-list li::before,
+    .check-list li::before {
+      content:"";
+      position:absolute;
+      left:0;
+      top:.75em;
+      width:7px;
+      height:7px;
+      background:var(--cedar);
+      transform:rotate(45deg);
+    }
+
+    .quote-block {
+      border-left:3px solid var(--cedar);
+      padding:30px 0 30px 30px;
+      color:var(--forest);
+      font-family:var(--display);
+      font-size:2.35rem;
+      line-height:1.16;
+    }
+
+    .system-grid {
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:16px;
+    }
+
+    .system-card,
+    .fit-panel,
+    .measure-card,
+    .artifact-card,
+    .program-card,
+    .compare-card {
+      min-width:0;
+      border-radius:6px;
+    }
+
+    .system-card {
+      position:relative;
+      min-height:315px;
+      padding:28px;
+      border:1px solid var(--soft);
+      background:var(--paper);
+    }
+
+    .system-card::before {
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:3px;
+      background:linear-gradient(90deg, var(--cedar), rgba(184,147,90,.16));
+    }
+
+    .system-label,
+    .step-label,
+    .program-label,
+    .document-label,
+    .compare-label {
+      display:block;
+      margin-bottom:18px;
+      color:var(--cedar);
+      font-size:.78rem;
+      font-weight:600;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .system-card p,
+    .measure-card p,
+    .artifact-card p,
+    .program-card p,
+    .compare-card p {
+      font-size:.95rem;
+      line-height:1.72;
+    }
+
+    .fit-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .fit-panel {
+      padding:34px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.055);
+    }
+
+    .fit-panel h3 { margin-bottom:22px; }
+    .fit-panel li { color:rgba(255,255,255,.78); }
+    .fit-panel li::before { background:var(--cedar-light); }
+
+    .timeline {
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      background:var(--paper);
+    }
+
+    .timeline-step {
+      position:relative;
+      min-width:0;
+      padding:32px 28px 34px;
+      border-right:1px solid var(--line);
+    }
+
+    .timeline-step:last-child { border-right:0; }
+
+    .timeline-step h3 {
+      color:var(--forest);
+      font-family:var(--body);
+      font-size:.95rem;
+      font-weight:600;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .process-summary {
+      max-width:920px;
+      margin-top:34px;
+      padding:26px 30px;
+      border-left:3px solid var(--cedar);
+      background:var(--paper);
+      color:var(--forest);
+      font-weight:500;
+    }
+
+    .measure-grid {
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:14px;
+    }
+
+    .measure-card {
+      min-height:190px;
+      padding:24px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.055);
+    }
+
+    .measure-card h3 {
+      color:var(--cedar-light);
+      font-family:var(--body);
+      font-size:.94rem;
+      font-weight:600;
+      line-height:1.36;
+    }
+
+    .disclaimer {
+      max-width:960px;
+      margin-top:30px;
+      padding:22px 24px;
+      border:1px solid rgba(214,178,122,.36);
+      background:rgba(184,147,90,.1);
+      color:rgba(255,255,255,.78);
+      font-size:.95rem;
+      line-height:1.74;
+    }
+
+    .artifact-grid {
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .artifact-card {
+      position:relative;
+      min-height:360px;
+      padding:34px 30px 30px;
+      border:1px solid rgba(23,37,30,.12);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(247,244,239,.92)),
+        var(--paper);
+      box-shadow:0 24px 60px rgba(23,37,30,.08);
+    }
+
+    .artifact-card::before {
+      content:"";
+      position:absolute;
+      top:18px;
+      left:30px;
+      right:30px;
+      height:1px;
+      background:linear-gradient(90deg, var(--cedar), transparent);
+    }
+
+    .artifact-card::after {
+      content:"";
+      position:absolute;
+      left:30px;
+      right:30px;
+      bottom:28px;
+      height:52px;
+      border-top:1px solid rgba(23,37,30,.12);
+      border-bottom:1px solid rgba(23,37,30,.08);
+      opacity:.7;
+    }
+
+    .document-meta {
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      margin-top:34px;
+      padding-top:20px;
+      border-top:1px solid rgba(23,37,30,.1);
+      color:var(--muted);
+      font-size:.78rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+
+    .program-grid,
+    .compare-grid {
+      display:grid;
+      gap:16px;
+    }
+
+    .program-grid { grid-template-columns:repeat(3, minmax(0, 1fr)); }
+    .compare-grid { grid-template-columns:repeat(4, minmax(0, 1fr)); }
+
+    .program-card {
+      display:flex;
+      flex-direction:column;
+      min-height:318px;
+      padding:30px;
+      border:1px solid var(--soft);
+      background:var(--paper);
+    }
+
+    .program-card .program-note {
+      margin-top:auto;
+      padding-top:24px;
+      color:var(--forest);
+      font-weight:500;
+    }
+
+    .microcopy {
+      margin-top:14px;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+
+    .compare-card {
+      min-height:245px;
+      padding:28px;
+      border:1px solid rgba(255,255,255,.13);
+      background:rgba(255,255,255,.055);
+    }
+
+    .compare-card h3 {
+      color:var(--cedar-light);
+      font-family:var(--body);
+      font-size:.95rem;
+      font-weight:600;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .important-note {
+      max-width:980px;
+      margin-top:30px;
+      padding:26px 28px;
+      border-left:3px solid var(--cedar-light);
+      background:rgba(255,255,255,.055);
+      color:rgba(255,255,255,.78);
+      font-size:1rem;
+      line-height:1.76;
+    }
+
+    .final-cta {
+      background:
+        linear-gradient(135deg, rgba(16,26,21,.98), rgba(23,37,30,.94)),
+        var(--forest);
+      color:var(--white);
+    }
+
+    .footer {
+      padding:34px 0;
+      background:var(--forest-deep);
+      color:rgba(255,255,255,.56);
+      font-size:.86rem;
+    }
+
+    .footer-inner {
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .footer a {
+      color:rgba(255,255,255,.7);
+      transition:color var(--t);
+    }
+
+    .footer a:hover { color:var(--cedar-light); }
+
+    @media(max-width:1180px) {
+      .site-nav-links { display:none; }
+      .site-nav-toggle { display:flex; }
+      .system-grid,
+      .timeline,
+      .measure-grid,
+      .compare-grid { grid-template-columns:repeat(2, minmax(0, 1fr)); }
+      .timeline-step:nth-child(2) { border-right:0; }
+      .timeline-step:nth-child(-n+2) { border-bottom:1px solid var(--line); }
+    }
+
+    @media(max-width:900px) {
+      h1 { font-size:4.1rem; }
+      h2 { font-size:3rem; }
+      .section { padding:78px 0; }
+      .problem-grid,
+      .fit-grid,
+      .program-grid,
+      .artifact-grid { grid-template-columns:1fr; }
+      .artifact-card,
+      .program-card { min-height:auto; }
+      .quote-block { padding:24px 0 24px 24px; font-size:2rem; }
+    }
+
+    @media(max-width:640px) {
+      html { scroll-padding-top:70px; }
+      .container { padding:0 18px; }
+      .site-nav { height:64px; padding:0 18px; }
+      .site-nav-mobile { top:64px; max-height:calc(100vh - 64px); }
+      .site-logo { font-size:1.25rem; }
+      .os-hero {
+        min-height:auto;
+        padding:124px 0 58px;
+      }
+      .hero-media img {
+        object-position:56% center;
+        opacity:.3;
+      }
+      h1 { font-size:3.05rem; }
+      h2 { font-size:2.35rem; }
+      h3 { font-size:1.42rem; }
+      .lead,
+      .hero-lead { font-size:1.05rem; }
+      .hero-actions,
+      .section-actions { flex-direction:column; }
+      .btn { width:100%; padding-left:18px; padding-right:18px; }
+      .proof-chips,
+      .system-grid,
+      .timeline,
+      .measure-grid,
+      .compare-grid { grid-template-columns:1fr; display:grid; }
+      .timeline-step,
+      .timeline-step:nth-child(2) {
+        border-right:0;
+        border-bottom:1px solid var(--line);
+      }
+      .timeline-step:last-child { border-bottom:0; }
+      .system-card,
+      .fit-panel,
+      .timeline-step,
+      .measure-card,
+      .artifact-card,
+      .program-card,
+      .compare-card { padding:24px; }
+      .footer-inner { display:grid; }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,
+      *::before,
+      *::after {
+        transition-duration:.01ms!important;
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Studio Las OS",
+    "url": "https://trenermedycznywarszawa.github.io/studio-las-v12/studio-las-os.html",
+    "description": "Prywatny system sprawności na lata dla osób 40-60+, oparty na mapie startowej ciała, treningu medycznym 1:1, sprawności funkcjonalnej, przeglądach kwartalnych i aktualizacji planu.",
+    "serviceType": ["trening medyczny", "sprawność funkcjonalna", "program prewencyjny"],
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Studio Las",
+      "url": "https://trenermedycznywarszawa.github.io/studio-las-v12/index.html",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Pracka 1J",
+        "addressLocality": "Prace Duże",
+        "postalCode": "05-504",
+        "addressCountry": "PL"
+      }
+    },
+    "areaServed": ["Prace Duże", "Tarczyn", "okolice Warszawy", "Piaseczno", "Warszawa"]
+  }
+  </script>
+</head>
+
+<body>
+  <nav class="site-nav" aria-label="Nawigacja główna">
+    <a class="site-logo" href="./index.html">Studio <span>Las</span></a>
+    <ul class="site-nav-links">
+      <li><a href="./index.html">Strona główna</a></li>
+      <li><a href="./metoda-i-pakiety.html">Metoda i pakiety</a></li>
+      <li><a href="./studio-las-os.html" class="active">Studio Las OS</a></li>
+      <li><a href="./blog.html">Blog</a></li>
+      <li><a href="./ankieta-kontakt.html#ankieta" class="site-nav-cta">ANKIETA / KONTAKT</a></li>
+      <li><!-- future client portal --><a href="strefa-klienta.html" class="site-client-link" aria-label="Panel klienta - funkcja w przygotowaniu"><svg class="site-client-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18.5 5.5h2v2"/><path d="M20.5 5.5 17 9"/></svg><span>Panel klienta</span></a></li>
+    </ul>
+    <button class="site-nav-toggle" id="hamburger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="navMobile" type="button">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="site-nav-mobile nav-mobile" id="navMobile">
+    <a href="./index.html">Strona główna</a>
+    <a href="./metoda-i-pakiety.html">Metoda i pakiety</a>
+    <a href="./studio-las-os.html" class="active">Studio Las OS</a>
+    <a href="./blog.html">Blog</a>
+    <a href="./ankieta-kontakt.html#ankieta" class="site-nav-cta">ANKIETA / KONTAKT</a>
+    <!-- future client portal --><a href="strefa-klienta.html" class="site-client-link" aria-label="Panel klienta - funkcja w przygotowaniu"><svg class="site-client-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/><path d="M18.5 5.5h2v2"/><path d="M20.5 5.5 17 9"/></svg><span>Panel klienta</span></a>
+  </div>
+
+  <main id="top">
+    <section class="os-hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img src="./images/studio-interior.webp" alt="" fetchpriority="high" />
+      </div>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="eyebrow">STUDIO LAS OS</div>
+          <h1 id="hero-title">Prywatny system sprawności dla ludzi, którzy nie mogą pozwolić sobie na fizyczny chaos.</h1>
+          <p class="hero-lead">Roczny, kameralny proces dla osób 40–60+, które chcą odzyskać kontrolę nad ciałem, zmniejszyć ryzyko bólu i zbudować sprawność na kolejne 10 lat.</p>
+          <div class="hero-actions" aria-label="Główne działania">
+            <a class="btn btn-primary" href="./ankieta-kontakt.html?program=studio-las-os">Umów Body Decode</a>
+            <a class="btn btn-ghost" href="#jak-dziala-system">Zobacz jak działa system</a>
+          </div>
+          <ul class="proof-chips" aria-label="Najważniejsze cechy programu">
+            <li>12 miesięcy perspektywy</li>
+            <li>ograniczona liczba miejsc</li>
+            <li>kwartalne przeglądy i raporty</li>
+          </ul>
+          <p class="hero-note">To nie jest siłownia, fizjoterapia ani wellness. To prywatny system operacyjny ciała — oparty na mapie startowej, spokojnym treningu 1:1, raportach kwartalnych i aktualizacji planu.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="problem">
+      <div class="container problem-grid">
+        <div class="copy-stack">
+          <div class="eyebrow">Problem</div>
+          <h2>Nie zaczyna się od bólu. Zaczyna się od utraty zaufania do ciała.</h2>
+          <p>Po 40. roku życia ciało coraz częściej przestaje być oczywistym narzędziem. Plecy odzywają się po pracy. Kolano przypomina o dawnym urazie. Sen nie regeneruje tak jak kiedyś. Siłownia wydaje się chaotyczna, fizjoterapia często kończy się za szybko, a internet daje sprzeczne rady.</p>
+          <p>Największy problem nie polega na tym, że nie znasz ćwiczeń. Problem polega na tym, że nie masz systemu, który mówi:</p>
+          <ul class="signal-list">
+            <li>co jest realnym ryzykiem,</li>
+            <li>co jest tylko strachem,</li>
+            <li>od czego zacząć,</li>
+            <li>co mierzyć,</li>
+            <li>kiedy progresować,</li>
+            <li>kiedy odpuścić,</li>
+            <li>jak utrzymać sprawność przez lata.</li>
+          </ul>
+        </div>
+        <blockquote class="quote-block">„Większość ludzi zarządza firmą, finansami i kalendarzem lepiej niż własnym ciałem.”</blockquote>
+      </div>
+    </section>
+
+    <section class="section off" id="czym-jest">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Czym jest Studio Las OS</div>
+          <h2>Studio Las OS to osobisty system operacyjny ciała.</h2>
+          <p class="lead">Studio Las OS jest prywatnym systemem operacyjnym ciała. Nie kupujesz treningów. Wchodzisz do uporządkowanego procesu, który pomaga zrozumieć ciało, odbudować fundament, zwiększyć odporność na przeciążenia i regularnie aktualizować plan działania.</p>
+        </div>
+        <div class="system-grid">
+          <article class="system-card">
+            <span class="system-label">01 / BODY DECODE</span>
+            <h3>Mapa startowa ciała.</h3>
+            <p>Wywiad, historia bólu, analiza składu ciała, testy ruchowe, siła, mobilność, równowaga, regeneracja i poziom zaufania do ciała.</p>
+          </article>
+          <article class="system-card">
+            <span class="system-label">02 / BODY REBUILD</span>
+            <h3>Odbudowa fundamentu.</h3>
+            <p>Pierwsze 12 tygodni spokojnej pracy 1:1: redukcja przeciążeń, odbudowa podstawowych wzorców, stabilizacja, siła bazowa i bezpieczny ruch.</p>
+          </article>
+          <article class="system-card">
+            <span class="system-label">03 / BODY RESILIENCE</span>
+            <h3>Odporność funkcjonalna.</h3>
+            <p>Drugi etap pracy: siła, tolerancja wysiłku, równowaga, mobilność i ciało przygotowane na realne życie — nie tylko salę treningową.</p>
+          </article>
+          <article class="system-card">
+            <span class="system-label">04 / BODY GOVERNANCE</span>
+            <h3>Zarządzanie sprawnością.</h3>
+            <p>Kwartalne przeglądy: pomiary, testy, raport, aktualizacja planu i decyzja, co robimy dalej.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="dla-kogo">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Kwalifikacja</div>
+          <h2>Dla osób, które czują, że ciało zaczyna wymagać zarządzania — nie przypadkowych zrywów.</h2>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-panel">
+            <h3>To jest dla Ciebie, jeśli:</h3>
+            <ul class="check-list">
+              <li>masz 40–60+ lat i czujesz, że ciało nie regeneruje się jak dawniej,</li>
+              <li>wracasz po epizodzie bólu, kontuzji albo operacji,</li>
+              <li>nie chcesz klasycznej siłowni, tłumu i przypadkowych planów,</li>
+              <li>masz dużo odpowiedzialności zawodowej lub rodzinnej,</li>
+              <li>chcesz działać spokojnie, ale konkretnie,</li>
+              <li>potrzebujesz kogoś, kto poprowadzi proces, a nie tylko pokaże ćwiczenia.</li>
+            </ul>
+          </article>
+          <article class="fit-panel">
+            <h3>To NIE jest dla Ciebie, jeśli:</h3>
+            <ul class="check-list">
+              <li>szukasz taniego karnetu,</li>
+              <li>chcesz szybkiego efektu do pokazania na zdjęciu,</li>
+              <li>nie chcesz robić pracy samodzielnej między sesjami,</li>
+              <li>oczekujesz cudownych skrótów,</li>
+              <li>interesuje Cię tylko pojedynczy trening bez procesu,</li>
+              <li>szukasz modnych trików zamiast podstaw wykonanych perfekcyjnie.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section white" id="jak-dziala-system">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Mechanika systemu</div>
+          <h2>To nie jest „chodzenie na trening”. To cykl zarządzania ciałem.</h2>
+          <p class="lead">Studio Las OS działa jak pętla decyzyjna: sprawdzamy, budujemy, testujemy i aktualizujemy.</p>
+        </div>
+        <ol class="timeline">
+          <li class="timeline-step">
+            <span class="step-label">1. Sprawdzamy</span>
+            <h3>Body Decode.</h3>
+            <p>Tworzymy mapę startową: ból, ruch, siła, mobilność, skład ciała, regeneracja i zaufanie do ciała.</p>
+          </li>
+          <li class="timeline-step">
+            <span class="step-label">2. Budujemy</span>
+            <h3>Body Rebuild.</h3>
+            <p>Odbudowujemy fundament: kontrolę, stabilność, siłę bazową i poczucie bezpieczeństwa w ruchu.</p>
+          </li>
+          <li class="timeline-step">
+            <span class="step-label">3. Wzmacniamy</span>
+            <h3>Body Resilience.</h3>
+            <p>Przygotowujemy ciało do realnego życia: siedzenia, stresu, podróży, schodów, ogrodu, nart, walizek i nagłych przeciążeń.</p>
+          </li>
+          <li class="timeline-step">
+            <span class="step-label">4. Aktualizujemy</span>
+            <h3>Body Governance.</h3>
+            <p>Co kwartał robimy przegląd: dane, testy, raport, decyzje i korekta planu.</p>
+          </li>
+        </ol>
+        <p class="process-summary">Ciało nie potrzebuje kolejnego zrywu. Potrzebuje systemu, który można aktualizować.</p>
+      </div>
+    </section>
+
+    <section class="section dark" id="co-mierzymy">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Co mierzymy i dlaczego</div>
+          <h2>Nie mierzymy wszystkiego. Mierzymy to, co pomaga podejmować lepsze decyzje.</h2>
+        </div>
+        <div class="measure-grid">
+          <article class="measure-card">
+            <h3>Ból i tolerancja obciążenia</h3>
+            <p>Żeby wiedzieć, kiedy można bezpiecznie progresować, a kiedy ciało jeszcze potrzebuje adaptacji.</p>
+          </article>
+          <article class="measure-card">
+            <h3>Mobilność i zakresy ruchu</h3>
+            <p>Żeby odróżnić realne ograniczenie od napięcia, które da się stopniowo odbudować.</p>
+          </article>
+          <article class="measure-card">
+            <h3>Siła funkcjonalna</h3>
+            <p>Żeby sprawdzić, czy ciało ma fundament do codziennych obciążeń, a nie tylko do ćwiczenia na sali.</p>
+          </article>
+          <article class="measure-card">
+            <h3>Równowaga i kontrola</h3>
+            <p>Żeby zmniejszać koszt potknięć, skrętów, schodów i sytuacji, w których ciało musi szybko zareagować.</p>
+          </article>
+          <article class="measure-card">
+            <h3>Skład ciała</h3>
+            <p>Żeby widzieć, jak zmienia się masa mięśniowa, tkanka tłuszczowa i obciążenie dla stawów.</p>
+          </article>
+          <article class="measure-card">
+            <h3>Regeneracja, sen i stres</h3>
+            <p>Żeby plan nie ignorował tego, co decyduje o adaptacji między sesjami.</p>
+          </article>
+          <article class="measure-card">
+            <h3>Poziom zaufania do ciała</h3>
+            <p>Żeby mierzyć nie tylko ruch, ale też gotowość do życia bez stałego hamowania się ze strachu.</p>
+          </article>
+          <article class="measure-card">
+            <h3>Samodzielność treningowa</h3>
+            <p>Żeby ciało nie było zależne wyłącznie od wizyt w studiu i miało plan na zwykły tydzień.</p>
+          </article>
+        </div>
+        <p class="disclaimer">Studio Las OS nie zastępuje lekarza, diagnostyki obrazowej ani leczenia. To system treningowo-edukacyjny i prewencyjny, który pomaga lepiej zarządzać sprawnością, ruchem i codziennym funkcjonowaniem.</p>
+      </div>
+    </section>
+
+    <section class="section white" id="artefakty">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Artefakty premium</div>
+          <h2>System musi zostawiać ślad. Dlatego pracujemy na raportach, nie na odczuciach z pamięci.</h2>
+          <p class="lead">W Studio Las OS postęp nie znika w rozmowach typu „chyba jest lepiej”. Po każdym kluczowym etapie klient otrzymuje jasne podsumowanie: co się zmieniło, co nadal ogranicza ciało i co robimy dalej.</p>
+        </div>
+        <div class="artifact-grid">
+          <article class="artifact-card">
+            <span class="document-label">Dokument 01</span>
+            <h3>Mapa Startowa Ciała</h3>
+            <p>Dokument po Body Decode: punkt wyjścia, główne ograniczenia, priorytety i plan pierwszych 12 tygodni.</p>
+            <div class="document-meta">
+              <span>Start</span>
+              <span>Priorytety</span>
+            </div>
+          </article>
+          <article class="artifact-card">
+            <span class="document-label">Dokument 02</span>
+            <h3>Kwartalny Raport Sprawności</h3>
+            <p>Podsumowanie pomiarów, testów, odczuć, progresu i decyzji na kolejny etap.</p>
+            <div class="document-meta">
+              <span>Przegląd</span>
+              <span>Decyzje</span>
+            </div>
+          </article>
+          <article class="artifact-card">
+            <span class="document-label">Dokument 03</span>
+            <h3>Plan Aktualizacji</h3>
+            <p>Krótki dokument wykonawczy: co robisz w studiu, co robisz samodzielnie i czego nie robisz, żeby nie cofać efektów.</p>
+            <div class="document-meta">
+              <span>Plan</span>
+              <span>Granice</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section off" id="format-programu">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Format programu</div>
+          <h2>Format premium. Ograniczona liczba miejsc. Zero przypadkowych wejść.</h2>
+          <p class="lead">Studio Las OS jest projektowany jako kameralny proces, a nie otwarta usługa dla każdego. Liczba miejsc jest ograniczona, ponieważ program wymaga realnej uwagi, przygotowania planu, monitorowania i kwartalnych aktualizacji.</p>
+        </div>
+        <div class="program-grid">
+          <article class="program-card">
+            <span class="program-label">Wejście</span>
+            <h3>BODY DECODE</h3>
+            <p>Sesja wejściowa i mapa startowa. Dla osoby, która chce zrozumieć, gdzie naprawdę jest i czy program ma sens.</p>
+            <p class="program-note">Pierwsza decyzja: od czego zaczynamy i czy roczny proces jest właściwym kierunkiem.</p>
+          </article>
+          <article class="program-card">
+            <span class="program-label">Etap 1</span>
+            <h3>FUNDAMENT OS</h3>
+            <p>Pierwszy etap odbudowy. 12 tygodni pracy 1:1, plan samodzielny, podstawowe pomiary i raport końcowy.</p>
+            <p class="program-note">Cel: odzyskać bazę, na której ciało może bezpiecznie pracować dalej.</p>
+          </article>
+          <article class="program-card">
+            <span class="program-label">Proces roczny</span>
+            <h3>PRIVATE BODY OS</h3>
+            <p>Pełny roczny proces. Body Decode, etapy pracy, raporty kwartalne, aktualizacje planu i priorytetowa opieka.</p>
+            <p class="program-note">Cel: sprawność na lata, a nie kolejny krótki epizod poprawy.</p>
+          </article>
+        </div>
+        <div class="section-actions">
+          <a class="btn btn-primary" href="./ankieta-kontakt.html?program=studio-las-os">Zapytaj o kwalifikację do programu</a>
+        </div>
+        <p class="microcopy">Pierwszym krokiem jest Body Decode — nie sprzedaż pakietu.</p>
+      </div>
+    </section>
+
+    <section class="section dark" id="porownanie">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Czym to się różni</div>
+          <h2>Mniej chaosu niż siłownia. Dłuższy proces niż fizjoterapia. Mniej obietnic niż longevity.</h2>
+        </div>
+        <div class="compare-grid">
+          <article class="compare-card">
+            <span class="compare-label">01</span>
+            <h3>Siłownia</h3>
+            <p>Daje dostęp do sprzętu. Nie daje systemu decyzji.</p>
+          </article>
+          <article class="compare-card">
+            <span class="compare-label">02</span>
+            <h3>Trening personalny</h3>
+            <p>Może dać ćwiczenia. Często nie prowadzi przez ból, lęk i długoterminową strategię.</p>
+          </article>
+          <article class="compare-card">
+            <span class="compare-label">03</span>
+            <h3>Fizjoterapia epizodyczna</h3>
+            <p>Pomaga w konkretnym problemie. Często kończy się, zanim ciało odzyska odporność funkcjonalną.</p>
+          </article>
+          <article class="compare-card">
+            <span class="compare-label">04</span>
+            <h3>Studio Las OS</h3>
+            <p>Łączy mapę startową, trening 1:1, edukację, raporty, aktualizacje i perspektywę sprawności na lata.</p>
+          </article>
+        </div>
+        <p class="important-note">Studio Las OS nie obiecuje cofania wieku biologicznego. Skupia się na tym, co naprawdę wpływa na codzienne życie: ruchu, sile, bólu, równowadze, regeneracji i zaufaniu do ciała.</p>
+      </div>
+    </section>
+
+    <section class="section final-cta" id="kontakt">
+      <div class="container">
+        <div class="eyebrow">Następny krok</div>
+        <h2>Nie czekaj, aż ciało wymusi decyzję.</h2>
+        <p class="lead">Jeśli czujesz, że ciało zaczyna wysyłać sygnały ostrzegawcze, nie potrzebujesz kolejnego przypadkowego planu. Potrzebujesz systemu, który pokaże, od czego zacząć i jak działać przez kolejne lata.</p>
+        <div class="section-actions">
+          <a class="btn btn-primary" href="./ankieta-kontakt.html?program=studio-las-os">Umów Body Decode</a>
+          <a class="btn btn-ghost" href="./index.html">Wróć do strony głównej Studio Las</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 Studio Las · Damian Krawiec</div>
+      <div>
+        <a href="./index.html">Strona główna</a> ·
+        <a href="./metoda-i-pakiety.html">Metoda i pakiety</a> ·
+        <a href="./studio-las-os.html">Studio Las OS</a> ·
+        <a href="./blog.html">Blog</a> ·
+        <a href="./ankieta-kontakt.html#ankieta">Ankieta</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function initSiteNavigation(){
+      const toggle = document.getElementById('hamburger');
+      const menu = document.getElementById('navMobile');
+      if (!toggle || !menu) return;
+
+      const setOpen = (open) => {
+        menu.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+      };
+
+      toggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        setOpen(!menu.classList.contains('open'));
+      });
+
+      menu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setOpen(false));
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') setOpen(false);
+      });
+    })();
+  </script>
+</body>
+</html>
