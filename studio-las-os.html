@@ -509,6 +509,72 @@
     .practice-card h3,
     .faq-item h3 { color:var(--cedar-light); }
 
+    .report-sample {
+      margin-top:42px;
+      padding:32px;
+      border:1px solid rgba(23,37,30,.12);
+      border-radius:6px;
+      background:var(--offwhite);
+    }
+
+    .report-sample h3 {
+      font-family:var(--display);
+      font-size:2rem;
+    }
+
+    .report-list {
+      display:grid;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .report-list li {
+      padding:16px 18px;
+      border-left:3px solid var(--cedar);
+      background:var(--paper);
+      color:var(--muted);
+      line-height:1.62;
+    }
+
+    .report-list strong {
+      color:var(--forest);
+      font-weight:600;
+    }
+
+    .guide-grid {
+      display:grid;
+      grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr);
+      gap:36px;
+      align-items:start;
+    }
+
+    .guide-points {
+      display:grid;
+      gap:12px;
+      padding:30px;
+      border:1px solid rgba(255,255,255,.13);
+      border-radius:6px;
+      background:rgba(255,255,255,.055);
+    }
+
+    .guide-points li {
+      position:relative;
+      padding-left:22px;
+      color:rgba(255,255,255,.78);
+      line-height:1.62;
+    }
+
+    .guide-points li::before {
+      content:"";
+      position:absolute;
+      left:0;
+      top:.76em;
+      width:7px;
+      height:7px;
+      background:var(--cedar-light);
+      transform:rotate(45deg);
+    }
+
     .system-grid {
       display:grid;
       grid-template-columns:repeat(4, minmax(0, 1fr));
@@ -736,6 +802,8 @@
       font-size:.92rem;
     }
 
+    .final-cta .microcopy { color:rgba(255,255,255,.66); }
+
     .compare-card {
       min-height:245px;
       padding:28px;
@@ -812,6 +880,7 @@
       .problem-grid,
       .fit-grid,
       .program-grid,
+      .guide-grid,
       .artifact-grid { grid-template-columns:1fr; }
       .artifact-card,
       .program-card { min-height:auto; }
@@ -858,6 +927,8 @@
       .decode-card,
       .practice-card,
       .faq-item,
+      .report-sample,
+      .guide-points,
       .fit-panel,
       .timeline-step,
       .measure-card,
@@ -939,9 +1010,9 @@
           <div class="eyebrow">STUDIO LAS OS</div>
           <h1 id="hero-title">Prywatny system sprawności dla ludzi, którzy nie mogą pozwolić sobie na fizyczny chaos.</h1>
           <p class="hero-lead">Roczny, kameralny proces dla osób 40–60+, które chcą odzyskać kontrolę nad ciałem, zmniejszyć ryzyko bólu i zbudować sprawność na kolejne 10 lat.</p>
-          <p class="hero-clarifier">Pierwszy krok to Body Decode — spokojna sesja wejściowa, po której dostajesz mapę startową ciała i rekomendację dalszej pracy. Dopiero wtedy decydujemy, czy pełny proces Studio Las OS ma sens.</p>
+          <p class="hero-clarifier">Pierwszy krok to Body Decode — Mapa Startowa Ciała: spokojna sesja wejściowa, po której dostajesz mapę startową ciała i rekomendację dalszej pracy. Dopiero wtedy decydujemy, czy pełny proces Studio Las OS ma sens.</p>
           <div class="hero-actions" aria-label="Główne działania">
-            <a class="btn btn-primary" href="./ankieta-kontakt.html?program=studio-las-os">Umów Body Decode</a>
+            <a class="btn btn-primary" href="./ankieta-kontakt.html?program=studio-las-os">Umów Mapę Startową</a>
             <a class="btn btn-ghost" href="#jak-dziala-system">Zobacz jak działa system</a>
           </div>
           <ul class="proof-chips" aria-label="Najważniejsze cechy programu">
@@ -949,7 +1020,7 @@
             <li>ograniczona liczba miejsc</li>
             <li>kwartalne przeglądy i raporty</li>
           </ul>
-          <p class="hero-note">To nie jest siłownia, fizjoterapia ani wellness. To prywatny system operacyjny ciała — oparty na mapie startowej, spokojnym treningu 1:1, raportach kwartalnych i aktualizacji planu.</p>
+          <p class="hero-note">Studio Las OS porządkuje ruch, siłę, regenerację i decyzje o progresie w jeden spokojny proces.</p>
         </div>
       </div>
     </section>
@@ -958,7 +1029,7 @@
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">Pierwszy krok</div>
-          <h2>Zaczynamy od Body Decode, nie od sprzedaży pakietu.</h2>
+          <h2>Zaczynamy od Body Decode — Mapy Startowej Ciała, nie od sprzedaży pakietu.</h2>
           <p class="lead">Studio Las OS nie zaczyna się od obietnicy rocznego programu. Zaczyna się od sprawdzenia, czy taki proces ma sens dla Twojego ciała, Twojej historii i Twojego życia.</p>
         </div>
         <div class="decode-grid">
@@ -976,7 +1047,7 @@
           </article>
         </div>
         <div class="section-actions">
-          <a class="btn btn-primary" href="./ankieta-kontakt.html?program=studio-las-os">Umów Body Decode</a>
+          <a class="btn btn-primary" href="./ankieta-kontakt.html?program=studio-las-os">Umów Body Decode / Mapę Startową</a>
         </div>
       </div>
     </section>
@@ -1011,7 +1082,7 @@
         </div>
         <div class="system-grid">
           <article class="system-card">
-            <span class="system-label">01 / BODY DECODE</span>
+            <span class="system-label">01 / BODY DECODE — MAPA STARTOWA CIAŁA</span>
             <h3>Mapa startowa ciała.</h3>
             <p>Wywiad, historia bólu, analiza składu ciała, testy ruchowe, siła, mobilność, równowaga, regeneracja i poziom zaufania do ciała.</p>
           </article>
@@ -1077,7 +1148,7 @@
         <ol class="timeline">
           <li class="timeline-step">
             <span class="step-label">1. Sprawdzamy</span>
-            <h3>Body Decode.</h3>
+            <h3>Body Decode — Mapa Startowa Ciała.</h3>
             <p>Tworzymy mapę startową: ból, ruch, siła, mobilność, skład ciała, regeneracja i zaufanie do ciała.</p>
           </li>
           <li class="timeline-step">
@@ -1180,7 +1251,7 @@
           <article class="artifact-card">
             <span class="document-label">Dokument 01</span>
             <h3>Mapa Startowa Ciała</h3>
-            <p>Dokument po Body Decode: punkt wyjścia, główne ograniczenia, priorytety i plan pierwszych 12 tygodni.</p>
+            <p>Dokument po Body Decode — Mapie Startowej Ciała: punkt wyjścia, główne ograniczenia, priorytety i plan pierwszych 12 tygodni.</p>
             <div class="document-meta">
               <span>Start</span>
               <span>Priorytety</span>
@@ -1205,6 +1276,34 @@
             </div>
           </article>
         </div>
+        <div class="report-sample">
+          <h3>Co może znaleźć się w raporcie?</h3>
+          <p>Raport nie jest ozdobnym PDF-em. Ma pomóc podjąć decyzję, co robimy dalej.</p>
+          <ul class="report-list">
+            <li><strong>Ból i tolerancja obciążenia</strong> — co prowokuje objawy, co jest już bezpieczne.</li>
+            <li><strong>Siła i kontrola</strong> — które wzorce są stabilne, które wymagają pracy.</li>
+            <li><strong>Mobilność i równowaga</strong> — gdzie ciało odzyskało zakres, gdzie nadal kompensuje.</li>
+            <li><strong>Regeneracja i nawyki</strong> — co wspiera adaptację, co ją blokuje.</li>
+            <li><strong>Decyzja na kolejny etap</strong> — progres, utrzymanie, zmiana planu albo konsultacja specjalistyczna.</li>
+          </ul>
+          <p class="microcopy">To przykład struktury raportu, nie obietnica konkretnego wyniku.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="kto-prowadzi">
+      <div class="container guide-grid">
+        <div>
+          <div class="eyebrow">Kto prowadzi proces</div>
+          <h2>System jest tak dobry, jak osoba, która umie go prowadzić.</h2>
+          <p class="lead">Studio Las OS prowadzi Damian Krawiec — trener medyczny z ponad 15-letnią praktyką, pracujący w modelu 1:1 z osobami po bólu, kontuzjach i okresach spadku sprawności. Proces nie polega na narzucaniu gotowego planu, ale na spokojnym prowadzeniu, obserwacji reakcji ciała i aktualizacji decyzji.</p>
+        </div>
+        <ul class="guide-points">
+          <li>trening medyczny i praca z ruchem,</li>
+          <li>doświadczenie z osobami po bólu i kontuzjach,</li>
+          <li>kameralny model bez tłumu,</li>
+          <li>jasne granice: gdy problem wymaga lekarza lub diagnostyki, nie udajemy, że trening zastąpi medycynę.</li>
+        </ul>
       </div>
     </section>
 
@@ -1215,11 +1314,11 @@
           <h2>Format premium. Ograniczona liczba miejsc. Zero przypadkowych wejść.</h2>
           <p class="lead">Studio Las OS jest projektowany jako kameralny proces, a nie otwarta usługa dla każdego. Liczba miejsc jest ograniczona, ponieważ program wymaga realnej uwagi, przygotowania planu, monitorowania i kwartalnych aktualizacji.</p>
         </div>
-        <p class="process-summary">Nie każdy zaczyna od pełnego rocznego procesu. Najpierw przechodzisz Body Decode. Dopiero po mapie startowej podejmujemy decyzję: krótki etap odbudowy, pełny proces OS albo inna ścieżka poza Studio Las.</p>
+        <p class="process-summary">Nie każdy zaczyna od pełnego rocznego procesu. Najpierw przechodzisz Body Decode — Mapę Startową Ciała. Dopiero po mapie startowej podejmujemy decyzję: krótki etap odbudowy, pełny proces OS albo inna ścieżka poza Studio Las.</p>
         <div class="program-grid">
           <article class="program-card">
             <span class="program-label">Wejście</span>
-            <h3>BODY DECODE</h3>
+            <h3>BODY DECODE — MAPA STARTOWA CIAŁA</h3>
             <p>Sesja wejściowa i mapa startowa. Dla osoby, która chce zrozumieć, gdzie naprawdę jest i czy program ma sens.</p>
             <p class="program-note">Pierwsza decyzja: od czego zaczynamy i czy roczny proces jest właściwym kierunkiem.</p>
           </article>
@@ -1232,14 +1331,14 @@
           <article class="program-card">
             <span class="program-label">Proces roczny</span>
             <h3>PRIVATE BODY OS</h3>
-            <p>Pełny roczny proces. Body Decode, etapy pracy, raporty kwartalne, aktualizacje planu i priorytetowa opieka.</p>
+            <p>Pełny roczny proces. Body Decode — Mapa Startowa Ciała, etapy pracy, raporty kwartalne, aktualizacje planu i priorytetowa opieka.</p>
             <p class="program-note">Cel: sprawność na lata, a nie kolejny krótki epizod poprawy.</p>
           </article>
         </div>
         <div class="section-actions">
           <a class="btn btn-primary" href="./ankieta-kontakt.html?program=studio-las-os">Zapytaj o kwalifikację do programu</a>
         </div>
-        <p class="microcopy">Pierwszym krokiem jest Body Decode — nie sprzedaż pakietu.</p>
+        <p class="microcopy">Pierwszym krokiem jest Body Decode — Mapa Startowa Ciała, nie sprzedaż pakietu.</p>
       </div>
     </section>
 
@@ -1284,7 +1383,7 @@
         <div class="faq-grid">
           <article class="faq-item">
             <h3>Czy muszę od razu decydować się na roczny program?</h3>
-            <p>Nie. Pierwszym krokiem jest Body Decode. Po nim dostajesz mapę startową i rekomendację dalszej pracy. Dopiero wtedy decydujemy, czy pełny proces ma sens.</p>
+            <p>Nie. Pierwszym krokiem jest Body Decode — Mapa Startowa Ciała. Po nim dostajesz mapę startową i rekomendację dalszej pracy. Dopiero wtedy decydujemy, czy pełny proces ma sens.</p>
           </article>
           <article class="faq-item">
             <h3>Czy mogę przyjść, jeśli boli mnie kręgosłup, kolano albo bark?</h3>
@@ -1311,11 +1410,12 @@
         <div class="eyebrow">Następny krok</div>
         <h2>Nie czekaj, aż ciało wymusi decyzję.</h2>
         <p class="lead">Jeśli czujesz, że ciało zaczyna wysyłać sygnały ostrzegawcze, nie potrzebujesz kolejnego przypadkowego planu. Potrzebujesz systemu, który pokaże, od czego zacząć i jak działać przez kolejne lata.</p>
-        <p>Nie musisz dziś deklarować rocznego procesu. Zacznij od Body Decode i sprawdź, czego naprawdę potrzebuje Twoje ciało.</p>
+        <p>Nie musisz dziś deklarować rocznego procesu. Zacznij od Body Decode — Mapy Startowej Ciała i sprawdź, czego naprawdę potrzebuje Twoje ciało.</p>
         <div class="section-actions">
-          <a class="btn btn-primary" href="./ankieta-kontakt.html?program=studio-las-os">Umów Body Decode</a>
+          <a class="btn btn-primary" href="./ankieta-kontakt.html?program=studio-las-os">Umów Mapę Startową</a>
           <a class="btn btn-ghost" href="./index.html">Wróć do strony głównej Studio Las</a>
         </div>
+        <p class="microcopy">Nie zapisujesz się od razu na roczny program. Pierwszym krokiem jest Mapa Startowa Ciała i decyzja, czy Studio Las OS jest właściwą ścieżką.</p>
       </div>
     </section>
   </main>
